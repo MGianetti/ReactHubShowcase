@@ -38,7 +38,7 @@ TextButton.defaultProps = {
   className: "",
   type: "button",
   text: "TextButton",
-  disabled: true,
+  disabled: false,
   onClick: () => undefined,
 };
 

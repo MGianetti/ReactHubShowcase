@@ -20,16 +20,16 @@ describe("Describe <TextButton/>", () => {
     expect(customTextButton).toBeInTheDocument();
   });
 
-  it("Should render disabled as default", () => {
+  it("Should render enabled as default", () => {
     setUpComponent();
     const textButton = screen.getByTestId(dataTestIds.textButtonId);
-    expect(textButton).toBeDisabled();
+    expect(textButton).toBeEnabled();
   });
 
-  it("Should render enabled if prop enabled is true", () => {
-    const disabled = false;
+  it("Should render disabled if prop disabled is true", () => {
+    const disabled = true;
     setUpComponent({ disabled });
     const textButton = screen.getByTestId(dataTestIds.textButtonId);
-    expect(textButton).toBeEnabled();
+    expect(textButton).toBeDisabled();
   });
 });
