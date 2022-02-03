@@ -1,7 +1,43 @@
-export const dataTestIds = {};
+import { Fragment } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-function Card() {
-  return <div>Card</div>;
+import styles from "./card.module.scss";
+
+export const dataTestIds = { card: "data-testid-card" };
+
+function Card(props) {
+  const { width, minHeight, className, children } = props;
+
+  const widthAndMinHeight = {
+    width: `${width}px`,
+    minHeight: `${minHeight}px`,
+  };
+
+  const cardClasses = classNames(styles.Card, className);
+  return (
+    <div
+      style={widthAndMinHeight}
+      className={cardClasses}
+      data-testid={dataTestIds.card}
+    >
+      {children}
+    </div>
+  );
 }
+
+Card.propTypes = {
+  width: PropTypes.number,
+  minHeight: PropTypes.number,
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Card.defaultProps = {
+  width: 400,
+  minHeight: 100,
+  className: "",
+  children: <Fragment></Fragment>,
+};
 
 export default Card;
