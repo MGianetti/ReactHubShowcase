@@ -8,27 +8,26 @@ export const dataTestIds = {
 };
 
 function TextButton(props) {
-  const { type, className, text, onClick, disabled } = props;
+  const { type, className, children, onClick, disabled } = props;
 
   const textButtonClasses = classNames(styles.TextButton, className);
 
   return (
     <button
       type={type}
-      text={text}
       onClick={onClick}
       className={textButtonClasses}
       disabled={disabled}
       data-testid={dataTestIds.textButtonId}
     >
-      {text}
+      {children}
     </button>
   );
 }
 
 TextButton.propTypes = {
   type: PropTypes.string,
-  text: PropTypes.string,
+  children: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
@@ -37,7 +36,7 @@ TextButton.propTypes = {
 TextButton.defaultProps = {
   className: "",
   type: "button",
-  text: "TextButton",
+  children: "TextButton",
   disabled: false,
   onClick: () => undefined,
 };
