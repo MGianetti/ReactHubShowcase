@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Card, { dataTestIds } from "./card.component";
 
 describe("Component <Card/>:", () => {
-  const defaultProps = { width: 200, minHeight: 300 };
+  const defaultProps = { minWidth: 200, minHeight: 300 };
 
   const setUpComponent = (props) => {
     const componentProps = { ...defaultProps, ...props };

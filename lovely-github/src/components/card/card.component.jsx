@@ -7,10 +7,10 @@ import styles from "./card.module.scss";
 export const dataTestIds = { card: "data-testid-card" };
 
 function Card(props) {
-  const { width, minHeight, className, children } = props;
+  const { minWidth, minHeight, className, children } = props;
 
   const widthAndMinHeight = {
-    width: `${width}px`,
+    minWidth: `${minWidth}px`,
     minHeight: `${minHeight}px`,
   };
 
@@ -27,14 +27,14 @@ function Card(props) {
 }
 
 Card.propTypes = {
-  width: PropTypes.number,
+  minWidth: PropTypes.number,
   minHeight: PropTypes.number,
   className: PropTypes.string,
   children: PropTypes.node,
 };
 
 Card.defaultProps = {
-  width: 400,
+  minWidth: 400,
   minHeight: 100,
   className: "",
   children: <Fragment></Fragment>,
