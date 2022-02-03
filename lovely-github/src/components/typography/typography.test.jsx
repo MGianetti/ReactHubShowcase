@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import Typography, { dataTestIds } from "./typography.component";
+import Typography from "./typography.component";
 
 describe("Component <Typography/>", () => {
   const defaultProps = { type: "h1" };
