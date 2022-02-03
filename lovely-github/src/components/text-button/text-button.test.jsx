@@ -14,9 +14,9 @@ describe("Component <TextButton/>", () => {
   });
 
   it("Should render correct text when passed via props", () => {
-    const text = "Awesome text";
-    setUpComponent({ text });
-    const customTextButton = screen.getByText(text);
+    const children = "Awesome text";
+    setUpComponent({ children });
+    const customTextButton = screen.getByText(children);
     expect(customTextButton).toBeInTheDocument();
   });
 
