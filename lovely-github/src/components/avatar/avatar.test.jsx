@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import Avatar, { dataTestIds } from "./avatar.component";
 
-describe("Describe <Avatar/>", () => {
+describe("Component <Avatar/>", () => {
   const defaultProps = {};
 
   const setUpComponent = (props) => {

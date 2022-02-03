@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import TextButton, { dataTestIds } from "./text-button.component";
 
-describe("Describe <TextButton/>", () => {
+describe("Component <TextButton/>", () => {
   const setUpComponent = (props) => {
     return render(<TextButton {...props} />);
   };

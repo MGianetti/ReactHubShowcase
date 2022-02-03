@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import SearchButton, { dataTestIds } from "./search-button.component";
 
-describe("Describe <SearchButton/>", () => {
+describe("Component <SearchButton/>", () => {
   const defaultProps = {};
 
   const setUpComponent = (props) => {

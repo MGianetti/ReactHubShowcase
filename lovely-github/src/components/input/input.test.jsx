@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import Input, { dataTestIds } from "./input.component";
 
-describe("Describe <Input/>", () => {
+describe("Component <Input/>", () => {
   const defaultProps = { value: "" };
 
   const setUpComponent = (props) => {

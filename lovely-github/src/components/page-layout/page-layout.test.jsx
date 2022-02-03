@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import PageLayout, { dataTestIds } from "./page-layout.component";
 
-describe("Describe <PageLayout/>:", () => {
+describe("Component <PageLayout/>:", () => {
   const defaultProps = {};
 
   const setUpComponent = (props) => {
