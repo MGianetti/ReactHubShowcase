@@ -1,0 +1,36 @@
+.UserInfoCard {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+.UserName {
+  margin: 0 1rem;
+}
+.UserDetails {
+  margin: 0 1rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  &:hover {
+    background-color: azure;
+  }
+}
+.UserReposCard {
+  width: 50rem;
+}
+.ReposList {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.UserReposLabel {
+  margin: 16px 0 0 40px;
+}
+.BackButton {
+  margin-top: 1rem;
+}
