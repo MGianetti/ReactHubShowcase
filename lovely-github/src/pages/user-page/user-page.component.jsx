@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 import Typography from "../../components/typography";
@@ -12,6 +14,11 @@ import { USER_PAGE } from "./user-page.constants";
 import styles from "./user-page.module.scss";
 
 function UserPage(props) {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/");
+  };
   const userRepos = [
     { id: "cae76b4267c", content: "LovelyAppRepo" },
     { id: "cae76b4267d", content: "E-CommerceRepo" },
@@ -36,7 +43,9 @@ function UserPage(props) {
         </Typography>
         <List className={styles.ReposList} itemsArray={userRepos} />
       </Card>
-      <TextButton className={styles.BackButton}>Back</TextButton>
+      <TextButton className={styles.BackButton} onClick={handleBackClick}>
+        {USER_PAGE.BACK_BUTTON}
+      </TextButton>
     </Fragment>
   );
 }

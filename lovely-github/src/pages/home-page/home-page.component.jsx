@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -14,10 +15,15 @@ import { HOME_PAGE } from "./home-page.constants";
 import styles from "./home-page.module.scss";
 
 function HomePage(props) {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
 
   const handleInputChange = (event) => {
     setUserName(event.currentTarget.value);
+  };
+
+  const handleSeeMoreClick = () => {
+    navigate("/user/mg");
   };
 
   return (
@@ -40,9 +46,12 @@ function HomePage(props) {
           #MGianetti
         </Typography>
         <Typography className={styles.UserBio} type="h3">
-          {HOME_PAGE.BIO} A focused React.js developer
+          A focused React.js developer
         </Typography>
-        <TextButton className={styles.SeeMoreButton}>
+        <TextButton
+          className={styles.SeeMoreButton}
+          onClick={handleSeeMoreClick}
+        >
           {HOME_PAGE.TEXT_BUTTON_LABEL}
         </TextButton>
       </Card>
