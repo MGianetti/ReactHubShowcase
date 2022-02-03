@@ -9,7 +9,7 @@ import Card from "../../components/card";
 import Avatar from "../../components/avatar";
 import TextButton from "../../components/text-button";
 
-import { HOME_PAGE } from "./home-page.contants";
+import { HOME_PAGE } from "./home-page.constants";
 
 import styles from "./home-page.module.scss";
 
