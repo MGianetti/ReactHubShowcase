@@ -45,7 +45,7 @@ function UserPage() {
       const { name, id, description } = actualRepo;
 
       const normalizedDescription =
-        description === null ? USER_PAGE.EMPTY_REPOS : description;
+        description === null ? USER_PAGE.EMPTY_DESCRIPTION : description;
 
       const content = `${name}: ${normalizedDescription}`;
 

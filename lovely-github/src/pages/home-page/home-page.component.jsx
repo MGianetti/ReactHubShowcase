@@ -10,19 +10,19 @@ import TextButton from "../../components/text-button";
 
 import userServices from "../../services/user";
 
-import { HOME_PAGE } from "./home-page.constants";
+import { HOME_PAGE, EMPTY, DEFAULT_AVATAR } from "./home-page.constants";
 
 import styles from "./home-page.module.scss";
 
 function HomePage() {
   const navigate = useNavigate();
 
-  const [userAvatar, setUserAvatar] = useState("/default_user.png");
-  const [userLogin, setUserLogin] = useState("");
-  const [userName, setUserName] = useState("");
-  const [userBio, serUserBio] = useState("");
+  const [userAvatar, setUserAvatar] = useState(DEFAULT_AVATAR);
+  const [userLogin, setUserLogin] = useState(EMPTY);
+  const [userName, setUserName] = useState(EMPTY);
+  const [userBio, serUserBio] = useState(EMPTY);
 
-  const [userNameSearch, setUserNameSearch] = useState("");
+  const [userNameSearch, setUserNameSearch] = useState(EMPTY);
   const [inputHasError, setInputHasError] = useState(false);
 
   const handleInputChange = (event) => {
@@ -30,7 +30,7 @@ function HomePage() {
   };
 
   const handleSearchButtonClick = async () => {
-    if (userNameSearch === "") {
+    if (userNameSearch === EMPTY) {
       setInputHasError(true);
       return;
     }
@@ -43,9 +43,15 @@ function HomePage() {
       setUserName(name);
       serUserBio(bio);
       setInputHasError(false);
-      setUserNameSearch("");
+      setUserNameSearch(EMPTY);
     } catch (error) {
-      // handle error
+      setUserAvatar(DEFAULT_AVATAR);
+      setUserLogin(EMPTY);
+      setUserName(EMPTY);
+      serUserBio(EMPTY);
+      setInputHasError(false);
+      setUserNameSearch(EMPTY);
+      alert(HOME_PAGE.USER_NOT_FOUND);
     }
   };
 
@@ -53,7 +59,7 @@ function HomePage() {
     navigate(`/user/${userLogin}`);
   };
 
-  const isSeeMoreDisabled = userName === "";
+  const isSeeMoreDisabled = userName === EMPTY;
 
   return (
     <div>
@@ -66,7 +72,7 @@ function HomePage() {
             value={userNameSearch}
             onChange={handleInputChange}
             hasError={inputHasError}
-            errorMessage="Type an username"
+            errorMessage={HOME_PAGE.EMPTY_ERROR}
           />
           <SearchButton
             className={styles.SearchButton}
