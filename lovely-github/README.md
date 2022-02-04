@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# LovelyStay coding challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the LovelyGithub application repository. This app was made with React and scss, to demonstrate how well I work
+with HTML, CSS, JS and React. I decided to implement all components to show up my independecy and autonomy on creating new design systems or requirements.
 
-## Available Scripts
+# How to run LovelyGithub application:
+
+## Method 1 -Local development enviroment:
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install all node packages dependencies.
+
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Method 2 - Local production version:
 
-### `npm test`
+### Build the application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1° Run: `npm install`
 
-### `npm run build`
+It will install all node dependencies for the project.
 
-Builds the app for production to the `build` folder.\
+2° Then: `npm run build`
+
+Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes.<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Serve the application
 
-### `npm run eject`
+Run `npm install -g serve` to install 'serve' library globally on your machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In the project directory, you can run: `serve -s build`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Serve the static site on the port 3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# How to test LovelyGithub application:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+In the project directory, you can run:
 
-## Learn More
+### `npm install`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install all node packages dependencies.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm run test-all`
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Trigger a test run at src folder to test all components.
