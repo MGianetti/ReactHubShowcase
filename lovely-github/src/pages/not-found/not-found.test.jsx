@@ -5,7 +5,7 @@ import NotFound from "./not-found.component";
 import { NOT_FOUND } from "./not-found.constants";
 
 describe("Component <NotFound/>", () => {
-  const setUpComponent = (props) => {
+  const setUpComponent = () => {
     return render(
       <BrowserRouter>
         <NotFound />

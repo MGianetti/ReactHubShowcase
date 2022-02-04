@@ -3,11 +3,8 @@ import { render, screen } from "@testing-library/react";
 import SearchButton, { dataTestIds } from "./search-button.component";
 
 describe("Component <SearchButton/>", () => {
-  const defaultProps = {};
-
   const setUpComponent = (props) => {
-    const componentProps = { ...defaultProps, ...props };
-    return render(<SearchButton {...componentProps} />);
+    return render(<SearchButton {...props} />);
   };
 
   it("Should be defined", () => {

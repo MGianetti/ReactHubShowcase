@@ -3,11 +3,8 @@ import { render, screen } from "@testing-library/react";
 import Spinner from "./spinner.component";
 
 describe("Component <Spinner/>", () => {
-  const defaultProps = {};
-
   const setUpComponent = (props) => {
-    const componentProps = { ...defaultProps, ...props };
-    return render(<Spinner {...componentProps} />);
+    return render(<Spinner {...props} />);
   };
 
   it("Should be defined", () => {

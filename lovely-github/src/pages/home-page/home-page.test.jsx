@@ -9,13 +9,10 @@ import { dataTestIds as searchButtonDataTestid } from "../../components/search-b
 import HomePage from "./home-page.component";
 
 describe("Component <HomePage/>", () => {
-  const defaultProps = {};
-
   const setUpComponent = (props) => {
-    const componentProps = { ...defaultProps, ...props };
     return render(
       <BrowserRouter>
-        <HomePage {...componentProps} />
+        <HomePage {...props} />
       </BrowserRouter>
     );
   };

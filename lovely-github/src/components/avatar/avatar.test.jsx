@@ -3,11 +3,8 @@ import { render, screen } from "@testing-library/react";
 import Avatar, { dataTestIds } from "./avatar.component";
 
 describe("Component <Avatar/>", () => {
-  const defaultProps = {};
-
   const setUpComponent = (props) => {
-    const componentProps = { ...defaultProps, ...props };
-    return render(<Avatar {...componentProps} />);
+    return render(<Avatar {...props} />);
   };
 
   it("Should be defined", () => {
