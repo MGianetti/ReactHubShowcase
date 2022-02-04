@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
-import classNames from "classnames";
 
 import Typography from "../../components/typography";
 import Input from "../../components/input";
@@ -16,7 +14,7 @@ import { HOME_PAGE } from "./home-page.constants";
 
 import styles from "./home-page.module.scss";
 
-function HomePage(props) {
+function HomePage() {
   const navigate = useNavigate();
 
   const [userAvatar, setUserAvatar] = useState("/default_user.png");
@@ -98,9 +96,5 @@ function HomePage(props) {
     </div>
   );
 }
-
-HomePage.propTypes = {};
-
-HomePage.defaultProps = {};
 
 export default HomePage;
