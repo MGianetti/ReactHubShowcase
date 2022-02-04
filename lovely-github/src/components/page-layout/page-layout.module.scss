@@ -1,3 +1,5 @@
+@import "../../sass/variables.scss";
+
 .Layout {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,14 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
   min-height: 100vh;
-  background: -webkit-linear-gradient(to right, #004e92, #000428);
-  background: linear-gradient(to right, #004e92, #000428);
+  background: -webkit-linear-gradient(
+    to right,
+    $color-medium-eletric-blue,
+    $color-rich-black
+  );
+  background: linear-gradient(
+    to right,
+    $color-medium-eletric-blue,
+    $color-rich-black
+  );
 }

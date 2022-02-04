@@ -1,19 +1,20 @@
+@import "../../sass/variables.scss";
+
 .Input {
-  font-family: Georgia, serif;
-  color: #333;
+  color: $color-dark-charcoal;
   font-size: 1.2rem;
   margin: 0 0 0.2rem 0;
   padding: 0.5rem;
   border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: $color-white;
   width: 90%;
   display: block;
   transition: all 0.3s;
 }
 .HasError {
-  border-color: rgb(243, 75, 75);
+  border-color: $color-tart-orange;
 }
 .ErrorMessage {
-  color: rgb(243, 75, 75);
+  color: $color-tart-orange;
   font-size: small;
 }

@@ -1,14 +1,15 @@
+@import "../../sass/mixins.scss";
+@import "../../sass/variables.scss";
+
 .TextButton {
-  background-image: linear-gradient(
-    92.88deg,
-    #455eb5 9.16%,
-    #5643cc 43.89%,
-    #673fd7 64.72%
+  @include makeLinearGradient(
+    $color-liberty,
+    $color-iris,
+    $color-majorelle-blue
   );
   border-radius: 8px;
   border-style: none;
-  box-sizing: border-box;
-  color: #ffffff;
+  color: $color-white;
   cursor: pointer;
   flex-shrink: 0;
   font-size: 16px;
@@ -25,11 +26,10 @@
   }
 }
 .Disabled {
-  background-image: linear-gradient(
-    92.88deg,
-    #e2e6f8 9.16%,
-    #8a8a8a 43.89%,
-    #4b4b4b 64.72%
+  @include makeLinearGradient(
+    $color-lavender,
+    $color-philippine-gray,
+    $color-quartz
   );
   cursor: auto;
   &:hover {

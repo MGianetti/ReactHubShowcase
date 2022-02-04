@@ -1,6 +1,8 @@
+@import "../../sass/variables.scss";
+
 .Card {
-  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-  background-color: rgb(255, 255, 255);
+  box-shadow: $color-majorelle-blue 0 1px 30px;
+  background-color: $color-white;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
