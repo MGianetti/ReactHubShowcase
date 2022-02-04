@@ -30,4 +30,13 @@ describe("Component <Input/>", () => {
     expect(input).toBeDefined();
     expect(input).toHaveAttribute("value", value);
   });
+
+  it("Should display a error message is hasError is true", () => {
+    const errorMessage = "Cannot be empty!";
+    const hasError = true;
+    setUpComponent({ errorMessage, hasError });
+
+    const errorSpan = screen.getByText(errorMessage);
+    expect(errorSpan).toBeDefined();
+  });
 });
