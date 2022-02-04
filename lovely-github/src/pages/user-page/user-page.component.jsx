@@ -1,7 +1,5 @@
-import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
-
-import PropTypes from "prop-types";
+import { Fragment, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Typography from "../../components/typography";
 import Card from "../../components/card";
@@ -9,32 +7,57 @@ import Avatar from "../../components/avatar";
 import List from "../../components/list";
 import TextButton from "../../components/text-button";
 
+import reposService from "../../services/repos";
+
 import { USER_PAGE } from "./user-page.constants";
 
 import styles from "./user-page.module.scss";
 
-function UserPage(props) {
+function UserPage() {
   const navigate = useNavigate();
+
+  const [userRepos, setUserRepos] = useState([]);
+  const [ownerLogin, setOwnerLogin] = useState("");
+  const [ownerAvatar, setOwnerAvatar] = useState("/default_user.png");
+  const username = useParams().username;
 
   const handleBackClick = () => {
     navigate("/");
   };
-  const userRepos = [
-    { id: "cae76b4267c", content: "LovelyAppRepo" },
-    { id: "cae76b4267d", content: "E-CommerceRepo" },
-  ];
+
+  const fetchRepositories = async () => {
+    const repositories = await reposService.getRepositories(username);
+    return repositories;
+  };
+
+  useEffect(() => {
+    fetchRepositories().then((reposArray) => {
+      const [firstRepo] = reposArray;
+      const { owner } = firstRepo;
+      const { login, avatar_url } = owner;
+
+      const normalizedRepos = reposArray.reduce((accRepos, actualRepo) => {
+        const { name, id } = actualRepo;
+        return [...accRepos, { content: name, id: `${id}` }];
+      }, []);
+      setUserRepos(normalizedRepos);
+      setOwnerLogin(login);
+      setOwnerAvatar(avatar_url);
+    });
+  });
+
+  const reposCounter = userRepos.length;
+
   return (
     <Fragment>
       <Card className={styles.UserInfoCard}>
-        <Avatar />
+        <Avatar src={ownerAvatar} />
         <Typography className={styles.UserName} type="h2">
-          Mateus Gianetti
+          {ownerLogin}
         </Typography>
         <div className={styles.UserDetails}>
-          12<Typography type="p">{USER_PAGE.REPOSITORIES}</Typography>
-        </div>
-        <div className={styles.UserDetails}>
-          10<Typography type="p">{USER_PAGE.FOLLOWERS}</Typography>
+          {reposCounter}
+          <Typography type="p">{USER_PAGE.REPOSITORIES}</Typography>
         </div>
       </Card>
       <Card className={styles.UserReposCard}>
@@ -49,9 +72,5 @@ function UserPage(props) {
     </Fragment>
   );
 }
-
-UserPage.propTypes = {};
-
-UserPage.defaultProps = {};
 
 export default UserPage;
