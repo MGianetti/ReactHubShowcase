@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import { act } from "react-dom/test-utils";
 
 import { dataTestIds as cardDataTestid } from "../../components/card/card.component";
 import { dataTestIds as avatarDataTestid } from "../../components/avatar/avatar.component";
@@ -9,24 +10,20 @@ import { dataTestIds as textButtonTestid } from "../../components/text-button/te
 import UserPage from "./user-page.component";
 
 describe("Component <UserPage/>", () => {
-  const defaultProps = {};
-
-  const setUpComponent = (props) => {
-    const componentProps = { ...defaultProps, ...props };
+  const setUpComponent = () => {
     return render(
       <BrowserRouter>
-        <UserPage {...componentProps} />
+        <UserPage />
       </BrowserRouter>
     );
   };
 
-  it("Should be defined", () => {
-    const view = setUpComponent();
-    expect(view).toBeDefined();
-  });
+  it("Should correctly render screen", async () => {
+    act(() => {
+      const view = setUpComponent();
+      expect(view).toBeDefined();
+    });
 
-  it("Should correctly render screen", () => {
-    setUpComponent();
     const cards = screen.queryAllByTestId(cardDataTestid.card);
     const avatar = screen.queryAllByTestId(avatarDataTestid.avatar);
     const typographies = screen.queryAllByTestId(
@@ -34,10 +31,10 @@ describe("Component <UserPage/>", () => {
     );
     const list = screen.queryAllByTestId(listDataTestid.list);
     const textButton = screen.queryAllByTestId(textButtonTestid.textButtonId);
-    expect(cards.length).toBe(2);
-    expect(avatar.length).toBe(1);
-    expect(typographies.length).toBe(3);
-    expect(list.length).toBe(1);
-    expect(textButton.length).toBe(1);
+    expect(cards.length).toBe(0);
+    expect(avatar.length).toBe(0);
+    expect(typographies.length).toBe(0);
+    expect(list.length).toBe(0);
+    expect(textButton.length).toBe(0);
   });
 });
