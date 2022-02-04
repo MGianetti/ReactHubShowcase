@@ -10,7 +10,9 @@ export const dataTestIds = {
 function TextButton(props) {
   const { type, className, children, onClick, disabled } = props;
 
-  const textButtonClasses = classNames(styles.TextButton, className);
+  const textButtonClasses = classNames(styles.TextButton, className, {
+    [styles.Disabled]: disabled,
+  });
 
   return (
     <button
