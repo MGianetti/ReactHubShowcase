@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PagesLayout from "./components/page-layout";
 import HomePage from "./pages/home-page";
 import UserPage from "./pages/user-page";
-
-import styles from "./App.module.scss";
+import "./sass/base.scss";
 
 function App() {
   return (

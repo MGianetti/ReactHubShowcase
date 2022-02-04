@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 
 import HomePage from "./home-page.component";
 
@@ -7,7 +8,11 @@ describe("Component <HomePage/>", () => {
 
   const setUpComponent = (props) => {
     const componentProps = { ...defaultProps, ...props };
-    return render(<HomePage {...componentProps} />);
+    return render(
+      <BrowserRouter>
+        <HomePage {...componentProps} />
+      </BrowserRouter>
+    );
   };
 
   it("Should be defined", () => {
