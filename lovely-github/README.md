@@ -1,4 +1,4 @@
-# LovelyStay coding challenge
+# Lovely Github
 
 This is the LovelyGithub application repository. This app was made with React and scss, to demonstrate how well I work
 with HTML, CSS, JS and React. I decided to implement all components to show up my independecy and autonomy on creating new design systems or requirements.
