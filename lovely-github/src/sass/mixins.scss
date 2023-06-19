@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+@mixin makeLinearGradient($initialColor, $transitionColor, $finalColor) {
+  background-image: linear-gradient(
+    90deg,
+    $initialColor 9.16%,
+    $transitionColor 43.89%,
+    $finalColor 64.72%
+  );
+}
