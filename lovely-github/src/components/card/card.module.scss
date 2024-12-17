@@ -1,0 +1,10 @@
+@import "../../sass/variables.scss";
+
+.Card {
+  box-shadow: $color-majorelle-blue 0 1px 30px;
+  background-color: $color-white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
